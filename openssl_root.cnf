@@ -82,7 +82,7 @@ stateOrProvinceName_default     = %STATE%
 localityName_default            =
 0.organizationName_default      = %ORGNAME%
 organizationalUnitName_default  = %UNITNAME%
-commonName_default            = %ORGNAME% - Root CA
+commonName_default              = %ORGNAME% - Root CA
 emailAddress_default            =
 
 [ v3_ca ]
