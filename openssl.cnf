@@ -82,7 +82,7 @@ stateOrProvinceName_default     = %STATE%
 localityName_default            =
 0.organizationName_default      = %ORGNAME%
 organizationalUnitName_default  = %UNITNAME%
-commonName_default		=
+commonName_default              = %ORGNAME% - Intermediate CA
 emailAddress_default            =
 
 [ v3_ca ]
