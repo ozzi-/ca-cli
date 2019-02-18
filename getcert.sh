@@ -22,18 +22,14 @@ cd $rootpath
 # * GET CERT *
 # ************
 
-echo ""
-printf "${YELLOW}Enter domain name of the certificate${NC}\n"
-read domain
-echo ""
-printf "${YELLOW}Do you want to output the certificate as PEM or PKCS12?${NC}\n"
-read format
-echo ""  
-if [ "$format" == "PEM" ] || [ "$format" == "pem" ]; then
-  cat intermediate/certs/$domain.cert.pem
-  cat intermediate/private/$domain.key.pem
-elif [ "$format" == "pkcs12" ] || [ "$format" == "PKCS12" ] || [ "$format" == "pkcs" ]; then
-  openssl pkcs12 -export -in intermediate/certs/$domain.cert.pem -inkey intermediate/private/$domain.key.pem
+if [ $# -eq 0 ]; then
+  echo ""
+  printf "${YELLOW}Enter domain name of the certificate${NC}\n"
+  read domain
+  echo ""
 else
-  echo "Type pkcs12 or pem."
+  domain=$1
 fi
+
+cat intermediate/certs/$domain.cert.pem
+cat intermediate/private/$domain.key.pem
